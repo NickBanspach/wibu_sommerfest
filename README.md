@@ -1,1 +1,0 @@
-# wibu_sommerfest
