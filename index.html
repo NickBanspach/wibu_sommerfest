@@ -6,37 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
     <style>
-body {
+    body {
   background-color: #009ee3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.loader {
-  font-size: 48px;
-  font-weight: 600;
-  display: flex;
-  letter-spacing: 2px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #FFF;
-  box-sizing: border-box;
-  animation: spotlight 2s linear infinite alternate;
+.container {
+  position: fixed;
+  inset: 0px;
+  width: 500%;
+  height: 5rem;
+  max-width: 100vw;
+  max-height: 100dvh;
+  margin: auto;
 }
 
-@keyframes spotlight {
-  0% , 20% {
-    opacity: 1;
-    letter-spacing: 2px;
-   }
- 80% , 100% {
-    opacity: 0;
-    letter-spacing: 15px;
-   }
-}
+.loader{
+      font-size: 48px;
+      color: #FFF;
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      position: relative;
+    }
+    .loader:before{
+      content: '';
+      animation: 5s print linear alternate infinite;
+    }
+    .loader:after{
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: 50%;
+      transform: translatey(-45%);
+      width: 2px;
+      height: 1.3em;
+      background: currentColor;
+      opacity: 0.8;
+      animation: 1s blink steps(2) infinite;
+    }
+    
+    @keyframes print {
+      0% { content: '➤'}
+      5% { content: '➤ '}
+      10% { content: '➤ D'}
+      15% { content: '➤ Di'}
+      20% { content: '➤ Die'}
+      25% { content: '➤ Die '}
+      30% { content: '➤ Die I'}
+      35% { content: '➤ Die IT'}
+      40% { content: '➤ Die IT '}
+      45% { content: '➤ Die IT i'}
+      50% { content: '➤ Die IT is'}
+      55% { content: '➤ Die IT ist'}
+      60% { content: '➤ Die IT ist '}
+      65% { content: '➤ Die IT ist d'}
+      70% { content: '➤ Die IT ist da'}
+      75% { content: '➤ Die IT ist da!'}
+      80% { content: '➤ Die IT ist da!!'}
+      85% { content: '➤ Die IT ist da!!! '}
+      90% { content: '➤ Die IT ist da!!! '}
+      95% , 100% { content: '➤ Die IT ist da!!! ➤'}
+    }
     </style>
   </head>
   <body>
-	  <span class="loader">➤ Die IT ist da!!! ➤</span>
+    <div class="container">
+      <span class="loader"></span>
+    </div>
   </body>
 </html>
